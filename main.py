@@ -17,7 +17,7 @@ TO_NUMBER = "+59160501893"  # Tu número boliviano
 twilio_client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 # Cargar modelo y tokenizador
-modelo_path = "modelo_distilbert_clasificacion_relatosnuevos_3"
+modelo_path = "modelo_distilbert_clasificacion_relatosnuevos_3-1-1"
 tokenizer = AutoTokenizer.from_pretrained(modelo_path)
 model = AutoModelForSequenceClassification.from_pretrained(modelo_path)
 
