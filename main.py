@@ -38,16 +38,16 @@ async def clasificar(entrada: TextoEntrada):
         pred = torch.argmax(outputs.logits, dim=1).item()
         if(pred == 1):
             predic = "es acoso"
-            # Enviar SMS con Twilio
-            #try:
-            #    message = twilio_client.messages.create(
-            #        body=f"Alerta: se detectó posible indicio de acoso escolar.\nTexto: {texto}",
-            #        from_=FROM_NUMBER,
-            #        to=TO_NUMBER
-            #    )
-            #    print("Mensaje enviado:", message.sid)
-            #except Exception as e:
-            #    print("Error al enviar SMS:", e)
+            Enviar SMS con Twilio
+            try:
+                message = twilio_client.messages.create(
+                    body=f"Alerta: se detectó posible indicio de acoso escolar.\nTexto: {texto}",
+                    from_=FROM_NUMBER,
+                    to=TO_NUMBER
+               )
+                print("Mensaje enviado:", message.sid)
+            except Exception as e:
+                print("Error al enviar SMS:", e)
         else: 
             predic = "no es acoso"
 
